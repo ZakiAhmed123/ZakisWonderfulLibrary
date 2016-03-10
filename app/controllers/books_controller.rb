@@ -12,16 +12,12 @@ class BooksController < ApplicationController
   end
 
   def create
-    # instantiate a blank Book object
     @book = Book.new
-    # set the values
     @book.title = params[:book][:title]
     @book.author_id = params[:book][:author_id]
-    @book.photo = params[:book][:photo_id]
+    @book.photo_id = params[:book][:photo_id]
     @book.price = params[:book][:price]
-    # save it
     if @book.save
-      # redirect to "/books"
       redirect_to root_path
     else
       render :new
