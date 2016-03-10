@@ -1,0 +1,17 @@
+<% if @book.errors.any? %>
+<% @book.errors.full_messages.each do |error| %>
+<strong><%= error %></strong>
+<% end %>
+<% end %>
+<%= form_for @book do |f| %>
+<div class="newform">
+<p>Insert Title<p><%= f.text_area :title, cols: "30", rows: "1"%></p></p>
+<p>Insert Price<p><%= f.text_area :price, cols: "10", rows:"1"%></p></p>
+<p>Photo URL<p><%= f.text_area :photo_id, cols: "60", rows:"1"%></p></p>
+<p><%= f.label :author %> </p>
+<p><%= f.collection_select :author_id, Author.all, :id, :full_name, {prompt: true},  {class: "form-control"} %></p>
+<p><%= f.submit class:"submit"%></p>
+</div>
+<% end %>
+
+</body>

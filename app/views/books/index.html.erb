@@ -1,0 +1,12 @@
+
+<div class="outer">
+<% @books.each do |book| %>
+<div class="cover">
+<%= link_to book_path(id: book.id), class:"image" do %><%= image_tag book.photo_id %><% end %>
+<p><%= link_to book_path(id: book.id), class:"Title" do %><%= book.title %><% end %> </p>
+<p>By<%= book.author.first_name %> <%= book.author.last_name %> </p>
+<p class="Price"> Price:<%= book.price %></p>
+</div>
+
+<% end %>
+</div>

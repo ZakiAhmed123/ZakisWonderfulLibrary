@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ZakisWonderfulBooks</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<nav>
+<p> <%= link_to "Home", root_path, class:"Home"%></p>
+<p>  <%= link_to "New Book", new_book_path, class:"Home" %> </p>
+<p>  <%= link_to "New Author", new_authors_path, class:"Home" %> </p>
+<p>  <%= link_to "Author List", authors_path, class:"Home" %></p>
+</nav>
+<body>
+
+<%= yield %>
+
+</body>
+</html>

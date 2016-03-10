@@ -1,0 +1,6 @@
+<div class="post">
+  <%= image_tag @book.photo_id %>
+<p><%= @book.title %></p><div class="sub"><p><%= @book.price %></p> </div></p>
+<div class="edit"><%= link_to "Edit", edit_book_path(id: @book.id), class: "Editbttn"%></div>
+
+</div>

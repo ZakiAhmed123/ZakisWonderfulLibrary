@@ -1,0 +1,12 @@
+
+<body>
+<div class="outer">
+<% @authors.each do |author| %>
+<div class="authors">
+<%= link_to author_path(id: author.id), class:"Title" do %><%= image_tag author.photo_id %> <% end %>
+<p><%= link_to author_path(id: author.id), class:"Name" do %><%= author.full_name %><% end %> </p>
+<p>Bio:<%= author.bio %></p>
+</div>
+<% end %>
+</div>
+</body>

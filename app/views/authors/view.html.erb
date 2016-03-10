@@ -1,0 +1,7 @@
+
+<div class="post">
+  <img src="<%= @author.photo_id%>" alt="" />
+<p><%= @author.full_name%> <p><div class="sub"><p><%= @author.bio %></p> </div></p>
+
+<div class="edit"><%= link_to "Edit", edit_authors_path(id: @author.id), class: "Editbttn"%></div>
+</div>
