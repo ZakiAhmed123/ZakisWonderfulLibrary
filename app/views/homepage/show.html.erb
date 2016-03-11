@@ -1,0 +1,11 @@
+<div class="hello">
+  <p>  <% if @current_user %>
+      Hello <%= @current_user.name %>!
+    <% end %></p>
+    <p>Welcome to ZakisWonderfulBooks</p>
+    <p> aka LIBRARY OF DOOM </p>
+    <%= image_tag "catreading.jpg" %>
+
+    <p><%= link_to 'ENTER', root_path %></p>
+
+</div>

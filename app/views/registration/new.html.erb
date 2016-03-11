@@ -1,0 +1,38 @@
+<div class="outershell">
+
+  <div class="signup">
+    <h1>New User Registration</h1>
+
+    <% if @user.errors.any? %>
+      <%= pluralize(@user.errors.count, 'error') %> prevented your form from success.
+      <ul class="mdl-list">
+        <% @user.errors.full_messages.each do |msg| %>
+          <li class="errorsss"><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
+
+    <%= form_for @user do |f| %>
+      <div class="">
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+      </div>
+
+      <div class="">
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </div>
+
+      <div class="">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+
+      <div class="">
+        <%= f.submit class: "submit" %>
+
+      </div>
+    <% end %>
+  </div>
+</div>

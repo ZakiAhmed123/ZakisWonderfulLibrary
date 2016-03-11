@@ -2,6 +2,10 @@ require "test_helper"
 
 class AddNewBook < Capybara::Rails::TestCase
 
+  setup do
+    Author.create! first_name: "Malcolm", last_name: "X", bio: "YYYYYY", photo_id:"http://www.ultimatestock.co.uk/wp-content/uploads/2016/02/Modern-Romance-Written-By-Aziz-Ansari-500x600.jpg"
+  end
+
 test "Can Add New Book" do
 
   visit root_path

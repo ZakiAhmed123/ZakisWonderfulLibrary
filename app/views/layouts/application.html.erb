@@ -11,6 +11,11 @@
 <p>  <%= link_to "New Book", new_book_path, class:"Home" %> </p>
 <p>  <%= link_to "New Author", new_authors_path, class:"Home" %> </p>
 <p>  <%= link_to "Author List", authors_path, class:"Home" %></p>
+<p><% if @current_user %>
+<%= link_to "Sign Out", sign_out_path, class: "Home" %>
+<% else %>
+<%= link_to "Sign In", sign_in_path, class: "Home" %>
+<% end %></p>
 </nav>
 <body>
 

@@ -9,7 +9,7 @@
 <p><%= f.label :price%>
 <p><%= f.text_area :price, cols: "10", rows:"1"%></p></p>
 <p><%= f.label :photo_id%><p><%= f.text_area :photo_id, cols: "60", rows:"1"%></p></p>
-<p><%= f.label :author %><p><%= f.collection_select :author_id, Author.all, :id, :full_name, {prompt: true},  {class: "form-control"} %></p></p>
+<p><%= f.label :author_id %><p><%= f.collection_select :author_id, Author.all, :id, :full_name, {prompt: true},  {class: "form-control"} %></p></p>
 <p><%= f.submit class:"submit"%></p>
 </div>
 <% end %>

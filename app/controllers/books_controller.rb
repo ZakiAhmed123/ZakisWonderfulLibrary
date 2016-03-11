@@ -1,9 +1,14 @@
 class BooksController < ApplicationController
+
   def index
     @books=Book.all.order("title asc")
     end
 
   def view
+    @current_user = User.find_by id: session[:user_id]
+    if @current_user.blank?
+      redirect_to sign_in_path
+    end
     @book = Book.find_by id: params[:id]
   end
 
@@ -29,16 +34,12 @@ class BooksController < ApplicationController
   end
 
   def update
-      # instantiant / Find
       @book = Book.find_by id: params[:id]
-      # set values
       @book.title = params[:book][:title]
       @book.author_id = params[:book][:author_id]
       @book.photo_id = params[:book][:photo_id]
       @book.price = params[:book][:price]
-      # save it
       if @book.save
-        # redirect to "/books"
         redirect_to book_path(id: @book.id)
       else
         render :edit
@@ -46,11 +47,8 @@ class BooksController < ApplicationController
     end
 
     def delete
-      # get the record
       @book = Book.find_by id: params[:id]
-      # destroy the record
       @book.destroy
-      # redirect away
       redirect_to root_path
     end
 

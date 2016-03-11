@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
-  
+
+
+  get 'sign_in' => 'session#new', as: :sign_in
+  post 'sign_in' => 'session#create'
+  get 'sign_out' => 'session#delete', as: :sign_out
+
+  get '/register' => 'registration#new', as: :new_user
+  post '/register' => 'registration#create', as: :users
+  get '/homepage' => 'homepage#show', as: :homepage
   root 'books#index'
 
   get 'books/new' => 'books#new', as: :new_book
@@ -16,6 +24,7 @@ Rails.application.routes.draw do
   get 'authors/:id/edit' => 'authors#edit', as: :edit_authors
   patch "authors/:id" => 'authors#update'
   delete "authors/:id" => 'authors#delete'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
