@@ -13,9 +13,9 @@ visit root_path
 
 click_link "Autobiography of Malcolm X"
 within("#book")
-fill_in "Name" with: "ZakiAhmed"
-fill_in "Email" with: "reach.zaki.ahmed@gmailcom"
-fill_in "Password" with:"Shakira!123"
+fill_in "Name", with: "ZakiAhmed"
+fill_in "Email", with: "reach.zaki.ahmed@gmailcom"
+fill_in "Password", with:"Shakira!123"
 click_button "Sign In"
 click_link "Autobiography of Malcolm X"
 
